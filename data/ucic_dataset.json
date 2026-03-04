@@ -1,0 +1,458 @@
+[
+  {
+    "id": "profil_ucic",
+    "category": "profil",
+    "keywords": [
+      "ucic",
+      "universitas",
+      "catur insan",
+      "cendekia",
+      "cirebon",
+      "kampus",
+      "sejarah"
+    ],
+    "title": "Profil Universitas Catur Insan Cendekia (UCIC)",
+    "content": "Universitas Catur Insan Cendekia (UCIC) merupakan institusi pendidikan modern di Cirebon yang lahir dari penggabungan STMIK CIC dan AP CIC berdasarkan SK Kemenristekdikti 952/KPT/I/2019. Fokus utama UCIC ialah teknologi, bisnis, dan sains. UCIC berkomitmen untuk menghasilkan lulusan yang adaptif, kreatif, dan kompeten di era digital."
+  },
+  {
+    "id": "rektor",
+    "category": "profil",
+    "keywords": [
+      "rektor",
+      "pimpinan",
+      "ketua",
+      "chandra",
+      "lukita"
+    ],
+    "title": "Rektor UCIC",
+    "content": "Rektor UCIC saat ini adalah Assoc. Prof. Dr. Chandra Lukita, S.E., M.M., M.T.I. Beliau memimpin universitas dalam upaya mengembangkan pendidikan tinggi berkualitas yang berorientasi pada teknologi dan kewirausahaan."
+  },
+  {
+    "id": "visi_misi",
+    "category": "visi_misi",
+    "keywords": [
+      "visi",
+      "misi",
+      "tujuan",
+      "orientasi",
+      "cita-cita"
+    ],
+    "title": "Visi dan Misi UCIC",
+    "content": "Visi UCIC: Menjadi Universitas yang berorientasi pada teknologi dan kewirausahaan untuk mendukung masyarakat daerah melalui pengembangan pendidikan yang inovatif, adaptif, dan berdaya saing global.\n\nMisi UCIC:\n1. Menyelenggarakan pendidikan tinggi berkualitas untuk menghasilkan lulusan adaptif, kreatif, dan kompeten.\n2. Mendorong lingkungan inovatif dalam teknologi, bisnis, seni, dan sains.\n3. Melaksanakan Tri Dharma Perguruan Tinggi secara profesional.\n4. Menyediakan akses pendidikan yang terjangkau dan relevan dengan perkembangan zaman.\n5. Mengembangkan kerja sama nasional dan internasional untuk peningkatan mutu akademik."
+  },
+  {
+    "id": "great_values",
+    "category": "nilai",
+    "keywords": [
+      "great",
+      "nilai",
+      "karakter",
+      "cic great",
+      "ucic great",
+      "creativity",
+      "grit"
+    ],
+    "title": "CIC GREAT — Nilai Dasar UCIC",
+    "content": "CIC GREAT adalah nilai dasar yang menjadi karakter Universitas CIC:\n- Creativity — Menciptakan gagasan baru dan inovatif.\n- Initiative — Berani bertindak tanpa menunggu instruksi.\n- Critical Thinking — Berpikir rasional & menganalisis fakta.\n- Grit — Pantang menyerah dalam mencapai tujuan.\n- Respectful — Menghargai keberagaman & menjunjung etika.\n- Entrepreneurship — Berpikir sebagai inovator dan pencipta peluang.\n- Accountable — Bertanggung jawab atas setiap tugas.\n- Teamwork — Membangun kolaborasi efektif untuk tujuan bersama."
+  },
+  {
+    "id": "logo_ucic",
+    "category": "profil",
+    "keywords": [
+      "logo",
+      "filosofi",
+      "lambang",
+      "simbol",
+      "makna"
+    ],
+    "title": "Filosofi Logo UCIC",
+    "content": "Logo UCIC memuat makna mendalam:\n- Perisai biru: kejujuran & perlindungan\n- Emas: optimisme\n- Obor, buku, pena: semangat akademik\n- Udang & Mega Mendung: identitas Cirebon dan nilai budaya lokal"
+  },
+  {
+    "id": "jurusan_feb",
+    "category": "jurusan",
+    "keywords": [
+      "jurusan",
+      "prodi",
+      "fakultas",
+      "ekonomi",
+      "bisnis",
+      "akuntansi",
+      "manajemen",
+      "bisnis digital",
+      "feb"
+    ],
+    "title": "Fakultas Ekonomi dan Bisnis (FEB)",
+    "content": "Fakultas Ekonomi dan Bisnis (FEB) UCIC memiliki program studi:\n\nProgram S1:\n- Akuntansi\n- Manajemen\n- Bisnis Digital\n\nProgram D3:\n- Manajemen Bisnis\n\nFEB fokus pada pengembangan kompetensi di bidang ekonomi, keuangan, dan bisnis digital."
+  },
+  {
+    "id": "jurusan_fti",
+    "category": "jurusan",
+    "keywords": [
+      "jurusan",
+      "prodi",
+      "fakultas",
+      "teknologi",
+      "informatika",
+      "teknik",
+      "sistem informasi",
+      "dkv",
+      "desain",
+      "fti",
+      "mi",
+      "ka"
+    ],
+    "title": "Fakultas Teknologi Informasi (FTI)",
+    "content": "Fakultas Teknologi Informasi (FTI) UCIC memiliki program studi:\n\nProgram S1:\n- Teknik Informatika\n- Sistem Informasi\n- Desain Komunikasi Visual (DKV)\n\nProgram D3:\n- Manajemen Informatika\n- Komputerisasi Akuntansi\n\nFTI fokus pada pengembangan kompetensi di bidang teknologi informasi, pemrograman, dan desain."
+  },
+  {
+    "id": "jurusan_fps",
+    "category": "jurusan",
+    "keywords": [
+      "jurusan",
+      "prodi",
+      "fakultas",
+      "pendidikan",
+      "sains",
+      "olahraga",
+      "kepelatihan",
+      "fps",
+      "pikor"
+    ],
+    "title": "Fakultas Pendidikan dan Sains (FPS)",
+    "content": "Fakultas Pendidikan dan Sains (FPS) UCIC memiliki program studi:\n\nProgram S1:\n- Pendidikan Kepelatihan Olahraga (PIKOR)\n\nFPS fokus pada pengembangan kompetensi di bidang pendidikan dan sains olahraga."
+  },
+  {
+    "id": "lokasi_kampus",
+    "category": "lokasi",
+    "keywords": [
+      "lokasi",
+      "alamat",
+      "kampus",
+      "kesambi",
+      "cirebon",
+      "gedung",
+      "tempat"
+    ],
+    "title": "Lokasi Kampus UCIC",
+    "content": "UCIC memiliki dua lokasi kampus:\n\n- Kampus 1: Jalan Kesambi No. 202, Kota Cirebon\n- Kampus 2: Jalan Kesambi No. 58 A, Kota Cirebon\n\nKedua kampus terletak di kawasan strategis Kota Cirebon dengan akses transportasi yang mudah."
+  },
+  {
+    "id": "kontak_ucic",
+    "category": "kontak",
+    "keywords": [
+      "kontak",
+      "email",
+      "telepon",
+      "nomor",
+      "hubungi",
+      "whatsapp",
+      "wa",
+      "hp"
+    ],
+    "title": "Kontak UCIC",
+    "content": "Kontak Universitas Catur Insan Cendekia (UCIC):\n- Alamat: Jl. Kesambi No. 202, Cirebon\n- Email: info@ucic.ac.id\n- Telepon/WhatsApp: +62 895-1231-4188\n\nUntuk informasi PMB (Penerimaan Mahasiswa Baru), hubungi nomor di atas."
+  },
+  {
+    "id": "pendaftaran_pmb",
+    "category": "pendaftaran",
+    "keywords": [
+      "daftar",
+      "pendaftaran",
+      "pmb",
+      "mahasiswa baru",
+      "registrasi",
+      "cara daftar",
+      "masuk",
+      "persyaratan"
+    ],
+    "title": "Pendaftaran Mahasiswa Baru (PMB) UCIC",
+    "content": "Informasi Pendaftaran Mahasiswa Baru (PMB) UCIC:\n\nCara mendaftar:\n1. Kunjungi website resmi UCIC atau datang langsung ke kampus\n2. Isi formulir pendaftaran online/offline\n3. Lengkapi dokumen persyaratan\n4. Ikuti tes masuk (jika diperlukan)\n5. Lakukan pembayaran biaya pendaftaran\n\nPersyaratan umum:\n- Lulusan SMA/SMK/MA sederajat\n- Fotokopi ijazah dan transkrip nilai\n- Fotokopi KTP dan Kartu Keluarga\n- Pas foto terbaru\n\nUntuk info lebih lanjut hubungi: +62 895-1231-4188"
+  },
+  {
+    "id": "biaya_kuliah",
+    "category": "biaya",
+    "keywords": [
+      "biaya",
+      "ukt",
+      "spp",
+      "kuliah",
+      "bayar",
+      "cicilan",
+      "harga",
+      "tarif",
+      "uang"
+    ],
+    "title": "Biaya Kuliah UCIC",
+    "content": "Informasi biaya kuliah UCIC dapat berbeda-beda per program studi dan gelombang pendaftaran. UCIC menyediakan beberapa opsi pembayaran:\n\n- Pembayaran penuh (full payment) dengan potongan khusus\n- Pembayaran per semester\n- Cicilan bertahap\n\nUntuk informasi detail biaya kuliah terbaru, silakan hubungi bagian PMB UCIC di +62 895-1231-4188 atau kunjungi website resmi UCIC."
+  },
+  {
+    "id": "beasiswa",
+    "category": "beasiswa",
+    "keywords": [
+      "beasiswa",
+      "bantuan",
+      "gratis",
+      "potongan",
+      "scholarship",
+      "prestasi"
+    ],
+    "title": "Beasiswa UCIC",
+    "content": "UCIC menyediakan berbagai program beasiswa untuk mahasiswa berprestasi dan kurang mampu:\n\n- Beasiswa prestasi akademik\n- Beasiswa prestasi non-akademik (olahraga, seni, dll)\n- Beasiswa KIP-Kuliah (bantuan pemerintah)\n- Beasiswa internal UCIC\n\nUntuk informasi lebih lanjut tentang beasiswa, hubungi bagian kemahasiswaan UCIC."
+  },
+  {
+    "id": "fasilitas",
+    "category": "fasilitas",
+    "keywords": [
+      "fasilitas",
+      "lab",
+      "laboratorium",
+      "perpustakaan",
+      "wifi",
+      "gedung",
+      "ruang",
+      "sarana"
+    ],
+    "title": "Fasilitas UCIC",
+    "content": "Fasilitas yang tersedia di UCIC:\n\n- Laboratorium komputer modern\n- Perpustakaan dengan koleksi lengkap\n- Ruang kelas ber-AC dengan LCD projector\n- WiFi kampus\n- Laboratorium bahasa\n- Studio DKV (Desain Komunikasi Visual)\n- Lapangan olahraga\n- Mushola dan kantin\n- Area parkir luas\n\nUCIC terus mengembangkan fasilitas untuk mendukung kegiatan belajar mengajar."
+  },
+  {
+    "id": "akreditasi",
+    "category": "akreditasi",
+    "keywords": [
+      "akreditasi",
+      "mutu",
+      "kualitas",
+      "ban-pt",
+      "peringkat",
+      "nilai"
+    ],
+    "title": "Akreditasi UCIC",
+    "content": "UCIC dan program studinya telah terakreditasi oleh BAN-PT (Badan Akreditasi Nasional Perguruan Tinggi). Setiap program studi memiliki status akreditasi yang menjamin kualitas pendidikan. UCIC terus berupaya meningkatkan mutu pendidikan untuk meraih akreditasi terbaik."
+  },
+  {
+    "id": "dosen_pengembangan_karakter",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "pengembangan karakter",
+      "turini",
+      "chang yulius",
+      "darmawan",
+      "karakter",
+      "mata kuliah"
+    ],
+    "title": "Dosen Pengembangan Karakter",
+    "content": "Dosen mata kuliah Pengembangan Karakter di UCIC:\n- Turini, S.E.\n- Chang Yulius Darmawan, M.Psi., Psi.\n\nMata kuliah ini mengajarkan pembentukan karakter dan nilai-nilai kepribadian bagi mahasiswa UCIC."
+  },
+  {
+    "id": "dosen_arsitektur_komputer",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "arsitektur",
+      "organisasi komputer",
+      "victor asih",
+      "komputer",
+      "hardware"
+    ],
+    "title": "Dosen Arsitektur dan Organisasi Komputer",
+    "content": "Dosen mata kuliah Arsitektur dan Organisasi Komputer di UCIC:\n- Victor Asih, S.Si., M.T.\n\nMata kuliah ini mempelajari struktur dan fungsi komputer, termasuk CPU, memori, dan sistem I/O."
+  },
+  {
+    "id": "dosen_general_english",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "general english",
+      "bahasa inggris",
+      "viar",
+      "kartika",
+      "english"
+    ],
+    "title": "Dosen General English",
+    "content": "Dosen mata kuliah General English di UCIC:\n- Viar Dwi Kartika, S.Pd., M.Pd.\n\nMata kuliah ini mengajarkan kemampuan dasar bahasa Inggris untuk komunikasi akademik dan profesional."
+  },
+  {
+    "id": "dosen_aljabar_linier",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "aljabar",
+      "linier",
+      "matriks",
+      "linda",
+      "norhan",
+      "matematika"
+    ],
+    "title": "Dosen Aljabar Linier Matriks",
+    "content": "Dosen mata kuliah Aljabar Linier Matriks di UCIC:\n- Linda Norhan, S.T., M.T.\n\nMata kuliah ini mempelajari konsep matriks, vektor, transformasi linier, dan aplikasinya dalam komputasi."
+  },
+  {
+    "id": "dosen_pancasila_kewarganegaraan",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "pancasila",
+      "kewarganegaraan",
+      "anti korupsi",
+      "taufan",
+      "huneman",
+      "sudadi",
+      "pranata",
+      "pkn"
+    ],
+    "title": "Dosen Pancasila, Kewarganegaraan, dan Anti Korupsi",
+    "content": "Dosen mata kuliah Pancasila, Kewarganegaraan, dan Anti Korupsi di UCIC:\n- Taufan Huneman, M.H.\n- Sudadi Pranata, S.E., M.Si.\n\nMata kuliah ini mengajarkan nilai-nilai Pancasila, hak dan kewajiban warga negara, serta upaya pencegahan korupsi."
+  },
+  {
+    "id": "dosen_pemrograman_internet",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "pemrograman internet",
+      "web",
+      "bambang",
+      "sugiarto",
+      "internet",
+      "programming"
+    ],
+    "title": "Dosen Pemrograman Internet",
+    "content": "Dosen mata kuliah Pemrograman Internet di UCIC:\n- Bambang Sugiarto, S.Kom., M.Kom.\n\nMata kuliah ini mengajarkan pengembangan aplikasi berbasis web, termasuk HTML, CSS, JavaScript, dan framework web modern."
+  },
+  {
+    "id": "dosen_algoritma_pemrograman",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "algoritma",
+      "pemrograman",
+      "petrus",
+      "sokibi",
+      "kusnadi",
+      "coding",
+      "programming"
+    ],
+    "title": "Dosen Algoritma Pemrograman",
+    "content": "Dosen mata kuliah Algoritma Pemrograman di UCIC:\n- Petrus Sokibi, S.Kom., M.Kom.\n- Kusnadi, S.Kom., M.Kom.\n\nMata kuliah ini mengajarkan dasar-dasar algoritma, logika pemrograman, dan penyelesaian masalah menggunakan bahasa pemrograman."
+  },
+  {
+    "id": "dosen_bahasa_indonesia",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "bahasa indonesia",
+      "mohammad",
+      "umar",
+      "fakhrudin",
+      "indonesian"
+    ],
+    "title": "Dosen Bahasa Indonesia",
+    "content": "Dosen mata kuliah Bahasa Indonesia di UCIC:\n- Mohammad Umar Fakhrudin, S.Pd., M.Pd.\n\nMata kuliah ini mengajarkan kemampuan berbahasa Indonesia yang baik dan benar untuk penulisan akademis dan komunikasi profesional."
+  },
+  {
+    "id": "dosen_komunikasi_data_jaringan",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "komunikasi data",
+      "jaringan",
+      "ridho",
+      "taufiq",
+      "subagio",
+      "network",
+      "networking"
+    ],
+    "title": "Dosen Komunikasi Data dan Jaringan",
+    "content": "Dosen mata kuliah Komunikasi Data dan Jaringan di UCIC:\n- Ridho Taufiq Subagio, S.T., M.Kom.\n\nMata kuliah ini mempelajari konsep jaringan komputer, protokol komunikasi data, topologi jaringan, dan keamanan jaringan."
+  },
+  {
+    "id": "dosen_struktur_data",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "struktur data",
+      "petrus",
+      "sokibi",
+      "data structure",
+      "linked list",
+      "tree"
+    ],
+    "title": "Dosen Struktur Data",
+    "content": "Dosen mata kuliah Struktur Data di UCIC:\n- Petrus Sokibi, S.Kom., M.Kom.\n\nMata kuliah ini mengajarkan berbagai jenis struktur data seperti array, linked list, stack, queue, tree, dan graph serta implementasinya."
+  },
+  {
+    "id": "dosen_sistem_operasi",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "sistem operasi",
+      "victor asih",
+      "os",
+      "operating system",
+      "linux",
+      "windows"
+    ],
+    "title": "Dosen Sistem Operasi",
+    "content": "Dosen mata kuliah Sistem Operasi di UCIC:\n- Victor Asih, S.Si., M.T.\n\nMata kuliah ini mempelajari konsep sistem operasi, manajemen proses, manajemen memori, file system, dan keamanan sistem."
+  },
+  {
+    "id": "dosen_kecerdasan_buatan",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "kecerdasan buatan",
+      "ai",
+      "artificial intelligence",
+      "marsani",
+      "asfi",
+      "machine learning"
+    ],
+    "title": "Dosen Kecerdasan Buatan",
+    "content": "Dosen mata kuliah Kecerdasan Buatan (AI) di UCIC:\n- Marsani Asfi, S.Si., M.Si.\n\nMata kuliah ini mengajarkan konsep dasar kecerdasan buatan, machine learning, neural network, dan implementasinya dalam berbagai aplikasi."
+  },
+  {
+    "id": "dosen_rekayasa_aplikasi_internet",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "rekayasa",
+      "aplikasi internet",
+      "bambang",
+      "sugiarto",
+      "web app",
+      "fullstack"
+    ],
+    "title": "Dosen Rekayasa Aplikasi Internet",
+    "content": "Dosen mata kuliah Rekayasa Aplikasi Internet di UCIC:\n- Bambang Sugiarto, S.Kom., M.Kom.\n\nMata kuliah ini mengajarkan analisis, desain, dan pengembangan aplikasi internet modern menggunakan teknologi terkini."
+  },
+  {
+    "id": "dosen_intermediate_english",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "intermediate english",
+      "bahasa inggris lanjut",
+      "mohammad",
+      "umar",
+      "fakhrudin"
+    ],
+    "title": "Dosen Intermediate English",
+    "content": "Dosen mata kuliah Intermediate English di UCIC:\n- Mohammad Umar Fakhrudin, S.Pd., M.Pd.\n\nMata kuliah ini mengajarkan kemampuan bahasa Inggris tingkat menengah untuk keperluan akademis, presentasi, dan penulisan ilmiah."
+  },
+  {
+    "id": "daftar_dosen_lengkap",
+    "category": "dosen",
+    "keywords": [
+      "dosen",
+      "daftar dosen",
+      "semua dosen",
+      "pengajar",
+      "guru besar",
+      "tenaga pengajar",
+      "lecturer"
+    ],
+    "title": "Daftar Dosen UCIC",
+    "content": "Daftar dosen dan mata kuliah di UCIC:\n\n1. Turini, S.E. — Pengembangan Karakter\n2. Chang Yulius Darmawan, M.Psi., Psi. — Pengembangan Karakter\n3. Victor Asih, S.Si., M.T. — Arsitektur dan Organisasi Komputer, Sistem Operasi\n4. Viar Dwi Kartika, S.Pd., M.Pd. — General English\n5. Linda Norhan, S.T., M.T. — Aljabar Linier Matriks\n6. Taufan Huneman, M.H. — Pancasila, Kewarganegaraan, dan Anti Korupsi\n7. Sudadi Pranata, S.E., M.Si. — Pancasila, Kewarganegaraan, dan Anti Korupsi\n8. Bambang Sugiarto, S.Kom., M.Kom. — Pemrograman Internet, Rekayasa Aplikasi Internet\n9. Petrus Sokibi, S.Kom., M.Kom. — Algoritma Pemrograman, Struktur Data\n10. Kusnadi, S.Kom., M.Kom. — Algoritma Pemrograman\n11. Mohammad Umar Fakhrudin, S.Pd., M.Pd. — Bahasa Indonesia, Intermediate English\n12. Ridho Taufiq Subagio, S.T., M.Kom. — Komunikasi Data dan Jaringan\n13. Marsani Asfi, S.Si., M.Si. — Kecerdasan Buatan"
+  }
+]

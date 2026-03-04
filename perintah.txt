@@ -1,0 +1,35 @@
+flutter pub get              <- Update Dependencies
+flutter run                  <- Running Program
+flutter build apk --release  <- Create APK
+
+
+// ========== SETUP SATU KALI (WAJIB) ==========
+
+// 1. Klik kanan setup_autostart.bat
+//    Pilih "Run as administrator"
+//    Ini akan:
+//    - Buka port 8000 di Firewall
+//    - Daftarkan server AI auto-start saat Windows nyala
+//    - Server langsung jalan sekarang
+//
+// 2. Pastikan Ollama sudah terinstall dan auto-start:
+//    ollama serve
+//    ollama pull deepseek-v3.1:671b-cloud
+//
+// SETELAH SETUP: Server AI OTOMATIS JALAN SELAMANYA!
+// Tidak perlu jalankan python main.py lagi.
+
+
+// ========== BUILD APK UNTUK HP ==========
+
+// 1. Pastikan server sudah jalan (cek: http://192.168.1.7:8000/api/health)
+// 2. Build APK:
+flutter build apk --release
+// 3. Install ke HP (WiFi harus sama dengan PC)
+
+
+// ========== HAPUS AUTO-START ==========
+
+// Kalau mau matikan auto-start:
+schtasks /delete /tn "MrGreatAIServer" /f
+netsh advfirewall firewall delete rule name="MrGreatAI-Server"

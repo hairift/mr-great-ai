@@ -1,0 +1,23 @@
+# Render.com deployment config
+services:
+  - type: web
+    name: mrgreat-ai
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: AI_PROVIDER
+        value: ollama_cloud
+      - key: OLLAMA_CLOUD_API_KEY
+        sync: false  # Set manually in Render dashboard (keep secret)
+      - key: OLLAMA_CLOUD_BASE_URL
+        value: https://api.ollama.com
+      - key: OLLAMA_CLOUD_MODEL
+        value: deepseek-v3.1:671b-cloud
+      - key: API_KEY
+        value: mrgreat-ucic-2024-secret-key
+      - key: PORT
+        value: "8000"
+      - key: MAX_TOKENS
+        value: "500"
+      - key: RATE_LIMIT_PER_MINUTE
+        value: "30"
