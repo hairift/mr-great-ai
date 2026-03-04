@@ -1,64 +1,103 @@
-# Deploy Mr. Great AI ke Cloud (GRATIS, 24/7)
+# Deploy Mr. Great AI ke Hugging Face Spaces (GRATIS, Tanpa Credit Card!)
 
-Server AI akan jalan SELAMANYA di cloud — laptop boleh mati, WiFi manapun bisa akses.
+## Langkah-langkah (5 menit!)
 
-## Langkah-langkah
+### 1. Daftar Hugging Face (GRATIS)
 
-### 1. Push ke GitHub
+1. Buka: https://huggingface.co/join
+2. Daftar pakai **email** atau **GitHub** (TANPA credit card!)
 
-```bash
-cd C:\Users\riana\mr_great_ai
-git init
-git add .
-git commit -m "Mr. Great AI"
-git remote add origin https://github.com/USERNAME/mr-great-ai.git
-git push -u origin main
+### 2. Buat Space Baru
+
+1. Buka: https://huggingface.co/new-space
+2. Isi:
+   - **Space name**: `mrgreat-ai`
+   - **License**: MIT
+   - **SDK**: pilih **Docker**
+   - **Space hardware**: **CPU basic (Free)**
+   - Klik **"Create Space"**
+
+### 3. Upload Files
+
+Setelah Space dibuat, kamu perlu upload file-file ini:
+
+**Cara 1 — Via Web (paling gampang):**
+1. Di halaman Space, klik **"Files"** → **"Add file"** → **"Upload files"**
+2. Upload file-file berikut:
+
+```
+Dockerfile              ← sudah ada di root project
+server/main.py
+server/agent.py
+server/config.py
+server/rag_engine.py
+server/requirements.txt
+data/ucic_dataset.json
 ```
 
-### 2. Deploy ke Render.com (GRATIS)
+**Cara 2 — Via Git (lebih rapi):**
+```bash
+git clone https://huggingface.co/spaces/USERNAME/mrgreat-ai
+cd mrgreat-ai
+```
+Copy semua file ke folder ini, lalu:
+```bash
+git add .
+git commit -m "Deploy Mr. Great AI"
+git push
+```
 
-1. Buka: https://render.com → daftar pakai GitHub (gratis)
-2. Klik **"New" → "Web Service"**
-3. Pilih repository `mr-great-ai`
-4. Setting:
-   - **Name**: `mrgreat-ai`
-   - **Region**: Singapore
-   - **Instance Type**: **Free**
-5. Klik **"Environment"** → tambahkan variable:
+### 4. Set Environment Variables (API Keys)
 
-| Key | Value |
-|-----|-------|
+1. Di halaman Space, klik **"Settings"**
+2. Scroll ke **"Repository secrets"**
+3. Tambahkan:
+
+| Secret Name | Value |
+|-------------|-------|
 | `AI_PROVIDER` | `ollama_cloud` |
 | `OLLAMA_CLOUD_API_KEY` | `a2f97ef2effa4c5fbc99f3374aeb35b3.LlcoRRIcf4rFaBbVsaFR4DPI` |
 | `OLLAMA_CLOUD_BASE_URL` | `https://api.ollama.com` |
 | `OLLAMA_CLOUD_MODEL` | `deepseek-v3.1:671b-cloud` |
 | `API_KEY` | `mrgreat-ucic-2024-secret-key` |
 
-6. Klik **"Deploy"** → tunggu sampai selesai (~5 menit)
+### 5. Tunggu Build Selesai
 
-### 3. Update Flutter App
+- Space akan otomatis build (~3-5 menit)
+- Status berubah jadi **"Running"** ✅
+- URL kamu: `https://USERNAME-mrgreat-ai.hf.space`
 
-Setelah deploy, Render kasih URL seperti: `https://mrgreat-ai.onrender.com`
+### 6. Update Flutter App
 
 Edit `lib/api_config.dart`:
 ```dart
 static String get baseUrl {
-  return "https://mrgreat-ai.onrender.com";
+  return "https://USERNAME-mrgreat-ai.hf.space";
 }
 ```
 
-### 4. Build APK
+Ganti `USERNAME` dengan username HuggingFace kamu.
+
+### 7. Build APK
 
 ```bash
 flutter build apk --release
 ```
 
-Install ke HP → **SELESAI! AI jalan 24/7!**
+Install ke HP → **SELESAI! AI jalan 24/7!** 🎉
 
 ---
 
-## Catatan Penting
+## Hasilnya
+- ✅ AI jalan **24/7** — laptop boleh mati
+- ✅ **WiFi manapun** bisa akses
+- ✅ **Siapapun** bisa akses
+- ✅ Tetap **Ollama Cloud + DeepSeek**
+- ✅ **GRATIS tanpa credit card!**
+- ✅ Tidak sleep/timeout
 
-- **Free tier Render**: Server "tidur" setelah 15 menit tidak dipakai. Request pertama setelah tidur butuh ~30 detik.
-- **Upgrade** ke Render paid ($7/bulan) supaya server selalu aktif tanpa delay.
-- Untuk hapus deployment: login ke Render dashboard → delete service.
+## Cek Status
+
+Buka di browser: `https://USERNAME-mrgreat-ai.hf.space/api/health`
+
+Kalau muncul `{"status": "ok"}` berarti server berjalan! ✅

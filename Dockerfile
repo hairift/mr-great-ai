@@ -9,8 +9,9 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY server/ ./
 COPY data/ ../data/
 
-# Expose port
-EXPOSE 8000
+# HF Spaces uses port 7860 by default
+ENV PORT=7860
+EXPOSE 7860
 
-# Start the server
-CMD ["gunicorn", "main:app", "--workers", "2", "--worker-class", "uvicorn.workers.UvicornWorker", "--bind", "0.0.0.0:8000", "--timeout", "120"]
+# Start the server (uses PORT from env)
+CMD gunicorn main:app --workers 2 --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:${PORT} --timeout 120
