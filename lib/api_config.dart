@@ -1,34 +1,23 @@
 // Shared API configuration for all chat pages.
 //
-// The app auto-detects the correct URL per platform:
-// - Web/Desktop: localhost (same machine)
-// - Android/iOS: your PC's local IP (same WiFi network)
-// - Public: ngrok or production URL
-
-import 'package:flutter/foundation.dart' show kIsWeb;
+// Server is deployed to HuggingFace Spaces — always online 24/7!
 
 class ApiConfig {
-  // =================== SERVER URL CONFIG ===================
-  // Your PC's local IP address (found via ipconfig)
-  // HP dan PC harus di WiFi yang SAMA
-  static const String _localNetworkIp = "192.168.1.7";
+  // =================== SERVER URL ===================
+  // HuggingFace Spaces (cloud, 24/7, gratis!)
+  static const String _cloudUrl = "https://firaarifaja-mrgreat-ai.hf.space";
 
-  // Untuk akses publik dari luar WiFi (uncomment & isi URL ngrok):
-  // static const String _publicUrl = "https://your-id.ngrok-free.app";
-  // ==========================================================
+  // Local development (uncomment untuk dev lokal)
+  // static const String _localUrl = "http://localhost:8000";
+  // ==================================================
 
-  /// Base URL — auto-selects per platform
+  /// Base URL — pakai cloud URL supaya bisa diakses dari mana saja
   static String get baseUrl {
-    // Uncomment line di bawah kalau pakai ngrok/public:
-    // return _publicUrl;
+    // Untuk development lokal, uncomment baris di bawah:
+    // if (kIsWeb) return "http://localhost:8000";
+    // return "http://10.0.2.2:8000";
 
-    if (kIsWeb) {
-      // Web browser di PC yang sama
-      return "http://localhost:8000";
-    }
-
-    // Mobile (Android/iOS) — connect ke PC via WiFi
-    return "http://$_localNetworkIp:8000";
+    return _cloudUrl;
   }
 
   /// API key for authentication

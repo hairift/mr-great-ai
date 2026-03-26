@@ -1,97 +1,158 @@
-// Shared TTS utility for cleaning text before speech synthesis.
-// Used by all chat pages to ensure TTS only reads clean, natural text.
+// Shared TTS utility — cleans AI response for Text-to-Speech.
+// Reads the FULL response clearly without any formatting artifacts.
 
-/// Thoroughly cleans text for Text-to-Speech output.
-///
-/// Strips ALL markdown formatting, emojis, LaTeX math, code blocks,
-/// URLs, special symbols, and other non-speech characters.
-/// Returns clean, natural Indonesian text ready for TTS.
+/// Cleans AI response text for TTS.
+/// Removes markdown formatting, emojis, and symbols.
+/// Keeps ALL readable text including names, titles, descriptions.
 String cleanTextForTTS(String text) {
   if (text.isEmpty) return '';
   String t = text;
 
-  // 1. Remove code blocks (``` ... ```) → replace with "kode program"
-  t = t.replaceAll(RegExp(r'```[\s\S]*?```'), ' kode program. ');
+  // ===== STEP 1: Remove code blocks =====
+  // Replace code blocks with spoken text
+  final codeBlockPattern = RegExp(r'```[\s\S]*?```');
+  t = t.replaceAll(codeBlockPattern, ' kode program ');
 
-  // 2. Remove inline code (`...`)
-  t = t.replaceAll(RegExp(r'`[^`]*`'), '');
+  // ===== STEP 2: Remove LaTeX/math =====
+  t = t.replaceAll(RegExp(r'\$\$[\s\S]*?\$\$'), ' rumus matematika ');
+  t = t.replaceAll(RegExp(r'\$[^\$\n]+\$'), ' rumus ');
 
-  // 3. Remove LaTeX math ($$...$$ and $...$)
-  t = t.replaceAll(RegExp(r'\$\$[\s\S]*?\$\$'), ' rumus matematika. ');
-  t = t.replaceAll(RegExp(r'\$[^\$]+\$'), ' rumus ');
+  // ===== STEP 3: Strip markdown — simple removal, NO regex backreferences =====
 
-  // 4. Remove markdown heading markers (# ## ### etc.)
-  t = t.replaceAll(RegExp(r'^\s*#{1,6}\s*', multiLine: true), '');
+  // Remove heading markers: "## Title" → "Title"
+  t = t.replaceAll(RegExp(r'^\s*#{1,6}\s+', multiLine: true), '');
 
-  // 5. Remove bold/italic/strikethrough markers (keep the text inside)
-  t = t.replaceAll(RegExp(r'\*\*\*(.*?)\*\*\*'), r'$1');  // ***bold italic***
-  t = t.replaceAll(RegExp(r'\*\*(.*?)\*\*'), r'$1');       // **bold**
-  t = t.replaceAll(RegExp(r'(?<!\w)\*(?!\s)(.*?)\*'), r'$1'); // *italic*
-  t = t.replaceAll(RegExp(r'__(.*?)__'), r'$1');            // __underline__
-  t = t.replaceAll(RegExp(r'_([^_]+)_'), r'$1');            // _italic_
-  t = t.replaceAll(RegExp(r'~~(.*?)~~'), r'$1');            // ~~strikethrough~~
+  // Remove bold markers: "**text**" → "text" (just remove the **)
+  t = t.replaceAll('***', '');
+  t = t.replaceAll('**', '');
 
-  // 6. Remove blockquote markers
-  t = t.replaceAll(RegExp(r'^\s*>\s*', multiLine: true), '');
+  // Remove strikethrough markers: "~~text~~" → "text"
+  t = t.replaceAll('~~', '');
 
-  // 7. Remove bullet point markers (-, *, +)
-  t = t.replaceAll(RegExp(r'^\s*[-*+]\s+', multiLine: true), '');
+  // Remove underline markers: "__text__" → "text"
+  // Only double underscores (keep single underscore in names like S.Kom)
+  t = t.replaceAll('__', '');
 
-  // 8. Remove numbered list markers (1. or 1))
+  // Remove inline code backticks
+  t = t.replaceAll('`', '');
+
+  // Remove blockquote markers
+  t = t.replaceAll(RegExp(r'^\s*>\s?', multiLine: true), '');
+
+  // Remove bullet point markers (only at line start)
+  t = t.replaceAll(RegExp(r'^\s*[-•]\s+', multiLine: true), '');
+  t = t.replaceAll(RegExp(r'^\s*\+\s+', multiLine: true), '');
+
+  // Remove numbered list markers (only at line start)
   t = t.replaceAll(RegExp(r'^\s*\d+[.)]\s+', multiLine: true), '');
 
-  // 9. Remove URLs
-  t = t.replaceAll(RegExp(r'https?://\S+'), '');
+  // Remove italic asterisks (single * at word boundaries)
+  // Process character by character to avoid backreference issues
+  t = _removeItalicAsterisks(t);
 
-  // 10. Remove markdown links [text](url) → keep text
-  t = t.replaceAll(RegExp(r'\[([^\]]*)\]\([^\)]*\)'), r'$1');
+  // Remove markdown links: [text](url) → text
+  t = _removeMarkdownLinks(t);
 
-  // 11. Remove markdown images ![alt](url)
+  // Remove markdown images
   t = t.replaceAll(RegExp(r'!\[[^\]]*\]\([^\)]*\)'), '');
 
-  // 12. Remove horizontal rules (---, ***, ___)
+  // Remove URLs
+  t = t.replaceAll(RegExp(r'https?://\S+'), '');
+
+  // Remove horizontal rules
   t = t.replaceAll(RegExp(r'^\s*[-*_]{3,}\s*$', multiLine: true), '');
 
-  // 13. Remove ALL emojis and special unicode symbols
+  // Remove HTML tags
+  t = t.replaceAll(RegExp(r'<[^>]*>'), '');
+
+  // ===== STEP 4: Remove emojis =====
+  t = _removeEmojis(t);
+
+  // ===== STEP 5: Clean remaining symbols =====
+  // Remove stray asterisks (not in words)
+  t = t.replaceAll(RegExp(r'\s\*\s'), ' ');
+  t = t.replaceAll(RegExp(r'^\*\s', multiLine: true), '');
+
+  // Remove dollar signs
+  t = t.replaceAll('\$', '');
+
+  // Remove stray backslashes
+  t = t.replaceAll(r'\', '');
+
+  // Remove multiple dashes
+  t = t.replaceAll(RegExp(r'-{2,}'), ' ');
+
+  // ===== STEP 6: Natural speech pauses =====
+  // Double newline → period (paragraph break)
+  t = t.replaceAll(RegExp(r'\n\s*\n'), '. ');
+  // Single newline → comma (brief pause)
+  t = t.replaceAll(RegExp(r'\n'), ', ');
+
+  // ===== STEP 7: Clean whitespace & punctuation =====
+  t = t.replaceAll(RegExp(r'\s{2,}'), ' ');
+  t = t.replaceAll(RegExp(r'\.(\s*\.)+'), '.');
+  t = t.replaceAll(RegExp(r',(\s*,)+'), ',');
+  t = t.replaceAll(RegExp(r'[.,]\s*[.,]'), '.');
+  t = t.replaceAll(RegExp(r'^\s*[.,]\s*'), '');
+
+  return t.trim();
+}
+
+/// Remove italic asterisks without using regex backreferences.
+/// Converts "*text*" → "text" by removing lone asterisks.
+String _removeItalicAsterisks(String text) {
+  // After ** and *** are already removed, remaining single * are italic markers
+  // Just remove them — they don't carry meaning for speech
+  final buffer = StringBuffer();
+  for (int i = 0; i < text.length; i++) {
+    if (text[i] == '*') {
+      // Skip lone asterisks (italic markers)
+      continue;
+    }
+    buffer.write(text[i]);
+  }
+  return buffer.toString();
+}
+
+/// Remove markdown links [text](url) → text, without regex backreferences.
+String _removeMarkdownLinks(String text) {
+  final linkPattern = RegExp(r'\[([^\]]*)\]\([^\)]*\)');
+  String result = text;
+  // Keep replacing until no more links found
+  while (linkPattern.hasMatch(result)) {
+    final match = linkPattern.firstMatch(result)!;
+    final linkText = match.group(1) ?? '';
+    result = result.replaceFirst(linkPattern, linkText);
+  }
+  return result;
+}
+
+/// Remove all emojis from text.
+String _removeEmojis(String text) {
+  // Remove by Unicode ranges
+  String t = text;
   t = t.replaceAll(RegExp(
-    r'[\u{1F600}-\u{1F64F}]|'  // Emoticons
-    r'[\u{1F300}-\u{1F5FF}]|'  // Misc Symbols and Pictographs
-    r'[\u{1F680}-\u{1F6FF}]|'  // Transport and Map
-    r'[\u{1F1E0}-\u{1F1FF}]|'  // Flags
-    r'[\u{2600}-\u{26FF}]|'    // Misc symbols
-    r'[\u{2700}-\u{27BF}]|'    // Dingbats
-    r'[\u{FE00}-\u{FE0F}]|'    // Variation Selectors
-    r'[\u{1F900}-\u{1F9FF}]|'  // Supplemental Symbols
-    r'[\u{1FA00}-\u{1FA6F}]|'  // Chess Symbols
-    r'[\u{1FA70}-\u{1FAFF}]|'  // Symbols Extended-A
-    r'[\u{200D}]|'              // Zero Width Joiner
-    r'[\u{20E3}]|'              // Combining Enclosing Keycap
-    r'[\u{FE0F}]|'              // Variation Selector-16
-    r'[\u{E0020}-\u{E007F}]',   // Tags
+    r'[\u{1F600}-\u{1F64F}]|'
+    r'[\u{1F300}-\u{1F5FF}]|'
+    r'[\u{1F680}-\u{1F6FF}]|'
+    r'[\u{1F1E0}-\u{1F1FF}]|'
+    r'[\u{2600}-\u{26FF}]|'
+    r'[\u{2700}-\u{27BF}]|'
+    r'[\u{FE00}-\u{FE0F}]|'
+    r'[\u{1F900}-\u{1F9FF}]|'
+    r'[\u{1FA00}-\u{1FA6F}]|'
+    r'[\u{1FA70}-\u{1FAFF}]|'
+    r'[\u{200D}]|'
+    r'[\u{20E3}]|'
+    r'[\u{E0020}-\u{E007F}]',
     unicode: true,
   ), '');
 
-  // 14. Remove remaining special symbols
-  t = t.replaceAll(RegExp(r'[⚠️❌✅📌📚📍💰📝🎯📘🟣💡👋😊😅🎉📊✨🏫🏢📞🔍❓💻🎨📈🤸👨‍🏫⛔🚀🌐🔑⏱️🐛]'), '');
+  // Also remove common emojis as literal characters (fallback)
+  const emojis = '📌📚📍💰📝🎯📘🟣💡👋😊😅🎉📊✨🏫🏢📞🔍❓💻🎨📈🤸⚠️❌✅⛔🚀🌐🔑⏱️🐛👨‍🏫';
+  for (final emoji in emojis.runes) {
+    t = t.replaceAll(String.fromCharCode(emoji), '');
+  }
 
-  // 15. Remove stray asterisks, underscores, tildes, backticks, dollar signs
-  t = t.replaceAll(RegExp(r'[*_~`\$\\]'), '');
-
-  // 16. Remove HTML tags
-  t = t.replaceAll(RegExp(r'<[^>]*>'), '');
-
-  // 17. Clean up punctuation: multiple dots, dashes
-  t = t.replaceAll(RegExp(r'\.{2,}'), '.');
-  t = t.replaceAll(RegExp(r'-{2,}'), ' ');
-
-  // 18. Clean up whitespace
-  t = t.replaceAll(RegExp(r'\n{2,}'), '. ');
-  t = t.replaceAll(RegExp(r'\n'), '. ');
-  t = t.replaceAll(RegExp(r'\s{2,}'), ' ');
-
-  // 19. Clean up multiple periods
-  t = t.replaceAll(RegExp(r'\.\s*\.'), '.');
-  t = t.replaceAll(RegExp(r',\s*,'), ',');
-
-  return t.trim();
+  return t;
 }
